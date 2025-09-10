@@ -12,36 +12,27 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.jetpack_compose_webview_navigaiton.ui.theme.Jetpack_compose_webview_navigaitonTheme
+import com.example.jetpack_compose_webview_navigaiton.webview.AdvancedWebViewScreen
+import com.example.jetpack_compose_webview_navigaiton.webview.MyWebViewScreen
+import com.example.jetpack_compose_webview_navigaiton.webview.SettingsScreenWebViewHeader
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             Jetpack_compose_webview_navigaitonTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    //  AdvancedWebViewScreen(modifier = Modifier.padding(innerPadding))
+//                    MyWebViewScreen(
+//                        url = "https://developer.android.com/",
+//                        modifier = Modifier.padding(innerPadding)
+//                    )
+
+                    SettingsScreenWebViewHeader(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Jetpack_compose_webview_navigaitonTheme {
-        Greeting("Android")
     }
 }
